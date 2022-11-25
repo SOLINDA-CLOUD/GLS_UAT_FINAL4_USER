@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_equipment_view_form_inherit_maintenance" model="ir.ui.view">
+            <field name="name">maintenance.equipment.view.form.inherit</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <!-- Add your fields here -->
+                    <field name="location_id"/>
+                    <field name="part_no"/>
+                </xpath>
+
+                <!-- <xpath expr="//notebook" position="inside">
+                    <page name="spare_part" string="Spare Part">
+                        <field name="spare_part_ids" nolabel="1">
+                            <tree editable="top">
+                                <field name="name"/>
+                                <field name="equipment_id" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath> -->
+
+            </field>
+        </record>
+
+    </data>
+</odoo>
